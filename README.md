@@ -3,7 +3,21 @@ A guide to compile windows programs on linux.
 
 ## Windows Installation
 
-TODO
+
+### Windows SSH key authentication
+
+To make the authentication by identity to work you need to make some changes in the permissions in the files:
+
+First you need to create an text file called **authorized_keys** and put there your .pub keys content, save it as UTF-8 (without BOM (you can do so creating the file with code or vim and editing with it, dont use notepad or other windows programs, they always fuck something up)) .
+
+Second, you need to change some permissions:
+  - Go to the proprieties of the file > Security > Advanced...
+  - Disable inherance > Convert ....
+  - Remove Administrators and any other users that are not yourself and the SYSTEM
+  - and apply
+
+If you want to login with an user with administrator priviledges copy the **authorized_keys** to **$programdata$/ssh** and change the name to **administrators_authorized_keys**
+and keep only **SYSTEM** and **Administrators**.
 
 # Cross compilation without VM
 
