@@ -35,7 +35,14 @@ lxc launch ubuntu:20.04
 
 #for using the console use the
 lxc exec <name-of-the-container> bash
+
+#for setting up an shared folder
+lxc config device add <container-name> vartest disk source=$(pwd)/debian-shared path=/mnt/host
+
 ```
+
+
+
 
 [after that setup ssh](https://www.freecodecamp.org/news/the-ultimate-guide-to-ssh-setting-up-ssh-keys/
 )
@@ -44,6 +51,8 @@ to have ssh and passthrough the Xorg with
 ```bash
 ssh -X <user>@<host>
 ```
+
+
 
 for other stuff visit the 
 [lxc](https://wiki.archlinux.org/title/Linux_Containers) 
