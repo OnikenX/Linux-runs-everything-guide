@@ -38,7 +38,10 @@ lxc exec <name-of-the-container> bash
 
 #for setting up an shared folder
 lxc config device add <container-name> vartest disk source=$(pwd)/debian-shared path=/mnt/host
-
+# and for all users to use it
+lxc config set <container-name> security.nesting true
+# and restart it with
+lxc restart <container-name>
 ```
 
 
