@@ -63,3 +63,8 @@ and
 [lxd](https://wiki.archlinux.org/title/LXD) 
 archwikis.
 
+To port forward a container do the following:
+```
+lxc config device add container-name myport8443 proxy listen=tcp:0.0.0.0:5555 connect=tcp:127.0.0.1:8443
+```
+where the listening port is the port exposed in the host and the connect is the port in the guest.
